@@ -1,9 +1,27 @@
 (async () => {
   // Pause between tab switches (10 sec)
   const pauseBetweenTabSwitches = 10 * 1000;
-  // Pause before and after mining
-  const pauseBeforeAndAfterMinig = 10 * 1000;
+  // Pause after mining (20 sec)
+  const pauseAndAfterMinig = 20 * 1000;
 
+  // Close error popup if need
+  setInterval(() => {
+    const btnCancel = document.querySelector(
+      ".container-card-error .btn-cancel"
+    );
+
+    if (btnCancel) btnCancel?.click();
+  }, 10 * 1000);
+
+  setInterval(() => {
+    const btnConfirm = document.querySelector(
+      ".container-setting .btn-confirm"
+    );
+
+    if (btnConfirm) btnConfirm?.click();
+  }, 5 * 1000);
+
+  // Let's start
   const leftPanelBts = [
     ...(
       document.querySelector(".tab-right") ||
@@ -23,15 +41,7 @@
       for (const claimBtn of claimBtns) {
         claimBtn.click();
 
-        while (!document.querySelector(".btn-confirm")) {
-          await new Promise((res) => setTimeout(res, 2 * 1000));
-        }
-
-        await new Promise((res) => setTimeout(res, pauseBeforeAndAfterMinig));
-
-        document.querySelector(".btn-confirm")?.click();
-
-        await new Promise((res) => setTimeout(res, pauseBeforeAndAfterMinig));
+        await new Promise((res) => setTimeout(res, pauseAndAfterMinig));
       }
     }
 

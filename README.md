@@ -21,6 +21,7 @@ https://youtu.be/rYehqByJPHs
 
 ### 12/12/2021
 
+- Added a random pause between actions
 - Redesigned card search algorithm
 
 ### 3/12/2021

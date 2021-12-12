@@ -1,5 +1,9 @@
 # Xpansion Bot Free
 
+## Video instruction
+
+https://youtu.be/rYehqByJPHs
+
 ## Instalation guide
 
 1. Open the game and log in.
@@ -15,10 +19,17 @@
 
 ## Changelog
 
+### 12/12/2021
+
+- Redesigned card search algorithm
+
 ### 3/12/2021
+
 - Corrected mining timings
 - Added functionality to automatically close the popup with an error
+
 ### 2/12/2021
+
 - The bot is running with minimal functionality
 
 ## Support

@@ -36,9 +36,12 @@
       leftPanelBt.click();
       await new Promise((res) => setTimeout(res, pauseBetweenTabSwitches));
 
-      const claimBtns = [...document.querySelectorAll(".btn-claim")].slice(1);
+      const claimBtns = [...document.querySelectorAll(".btn-claim")];
 
-      for (const claimBtn of claimBtns) {
+      for (let i = claimBtns.length; i > 0; --i) {
+        const claimBtn = document.querySelector(
+          `.container-menu-right .h-full:nth-child(${i - 1}) .btn-claim`
+        );
         claimBtn.click();
 
         await new Promise((res) => setTimeout(res, pauseAndAfterMinig));

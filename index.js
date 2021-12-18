@@ -38,17 +38,16 @@
     for (const leftPanelBt of leftPanelBts) {
       leftPanelBt.click();
       await new Promise((res) =>
-        setTimeout(res, random(...pauseBetweenTabSwitches))
-      );
+        setTimeout(res, random(...pauseBetweenTabSwitches)));
 
       const claimBtn = document.querySelector(".Claim All");
 	  try { claimBtn.click(); } catch {}
+
 	  await new Promise((res) =>
-          setTimeout(res, random(...pauseAndAfterMinig))
+          setTimeout(res, random(...pauseAndAfterMinig)));
     }
 
     await new Promise((res) =>
-      setTimeout(res, random(...pauseBetweenTabSwitches))
-    );
+      setTimeout(res, random(...pauseBetweenTabSwitches)));
   }
 })();

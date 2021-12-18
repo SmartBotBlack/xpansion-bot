@@ -42,12 +42,11 @@
 
       const claimBtns = [...document.querySelectorAll(".btn-claim")];
 	  if(claimBtns.length > 0) {
-		const claimBtn = document.querySelector(".Claim All");
+		const claimBtn = document.querySelector(".btn-claim");
 		try { claimBtn.click(); } catch {} 
-	  }
-
-	  await new Promise((res) =>
+		await new Promise((res) =>
           setTimeout(res, random(...pauseAndAfterMinig)));
+	  }
     }
 
     await new Promise((res) =>

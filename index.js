@@ -40,8 +40,11 @@
       await new Promise((res) =>
         setTimeout(res, random(...pauseBetweenTabSwitches)));
 
-      const claimBtn = document.querySelector(".Claim All");
-	  try { claimBtn.click(); } catch {}
+      const claimBtns = [...document.querySelectorAll(".btn-claim")];
+	  if(claimBtns.length > 0) {
+		const claimBtn = document.querySelector(".Claim All");
+		try { claimBtn.click(); } catch {} 
+	  }
 
 	  await new Promise((res) =>
           setTimeout(res, random(...pauseAndAfterMinig)));

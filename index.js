@@ -41,18 +41,10 @@
         setTimeout(res, random(...pauseBetweenTabSwitches))
       );
 
-      const claimBtns = [...document.querySelectorAll(".btn-claim")];
-
-      for (let i = claimBtns.length; i > 1; --i) {
-        const claimBtn = document.querySelector(
-          `.container-menu-right .h-full:nth-child(${i - 1}) .btn-claim`
-        );
-        claimBtn.click();
-
-        await new Promise((res) =>
+      const claimBtn = document.querySelector(".Claim All");
+	  try { claimBtn.click(); } catch {}
+	  await new Promise((res) =>
           setTimeout(res, random(...pauseAndAfterMinig))
-        );
-      }
     }
 
     await new Promise((res) =>

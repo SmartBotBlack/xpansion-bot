@@ -4,8 +4,8 @@
 
   // Pause between tab switches (10 sec)
   const pauseBetweenTabSwitches = [5 * 1000, 15 * 1000];
-  // Pause after mining (20 sec)
-  const pauseAndAfterMinig = [15 * 1000, 25 * 1000];
+  // Pause after mining (40 sec)
+  const pauseAndAfterMinig = [35 * 1000, 45 * 1000];
 
   // Close error popup if need
   setInterval(() => {

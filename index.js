@@ -4,8 +4,8 @@
 
   // Pause between tab switches (10 sec)
   const pauseBetweenTabSwitches = [5 * 1000, 15 * 1000];
-  // Pause after mining (20 sec)
-  const pauseAndAfterMinig = [15 * 1000, 25 * 1000];
+  // Pause after mining (40 sec)
+  const pauseAndAfterMinig = [35 * 1000, 45 * 1000];
 
   // Close error popup if need
   setInterval(() => {
@@ -38,25 +38,18 @@
     for (const leftPanelBt of leftPanelBts) {
       leftPanelBt.click();
       await new Promise((res) =>
-        setTimeout(res, random(...pauseBetweenTabSwitches))
-      );
+        setTimeout(res, random(...pauseBetweenTabSwitches)));
 
       const claimBtns = [...document.querySelectorAll(".btn-claim")];
-
-      for (let i = claimBtns.length; i > 1; --i) {
-        const claimBtn = document.querySelector(
-          `.container-menu-right .h-full:nth-child(${i - 1}) .btn-claim`
-        );
-        claimBtn.click();
-
-        await new Promise((res) =>
-          setTimeout(res, random(...pauseAndAfterMinig))
-        );
-      }
+	  if(claimBtns.length > 0) {
+		const claimBtn = document.querySelector(".btn-claim");
+		try { claimBtn.click(); } catch {} 
+		await new Promise((res) =>
+          setTimeout(res, random(...pauseAndAfterMinig)));
+	  }
     }
 
     await new Promise((res) =>
-      setTimeout(res, random(...pauseBetweenTabSwitches))
-    );
+      setTimeout(res, random(...pauseBetweenTabSwitches)));
   }
 })();

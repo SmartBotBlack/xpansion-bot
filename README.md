@@ -19,6 +19,11 @@ https://youtu.be/rYehqByJPHs
 
 ## Changelog
 
+### 18/12/2021
+
+- Removed single claims -> Claim all to reduce transactions
+- fixed bug: null reference
+
 ### 12/12/2021
 
 - Added a random pause between actions

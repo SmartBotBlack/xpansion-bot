@@ -1,6 +1,5 @@
 (async () => {
-  const random = (min, max) =>
-    Math.floor(Math.random() * (max - min + 1) + min);
+  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
   // Pause between tab switches (10 sec)
   const pauseBetweenTabSwitches = [5 * 1000, 15 * 1000];
@@ -12,8 +11,8 @@
     const btnCancel = document.querySelector(
       ".container-card-error .btn-cancel"
     );
-
-    if (btnCancel) btnCancel?.click();
+    if (btnCancel) 
+      btnCancel?.click();
   }, random(8 * 1000, 12 * 1000));
 
   setInterval(() => {
@@ -40,13 +39,23 @@
       await new Promise((res) =>
         setTimeout(res, random(...pauseBetweenTabSwitches)));
 
+      // claim and withdraw  
       const claimBtns = [...document.querySelectorAll(".btn-claim")];
-	  if(claimBtns.length > 0) {
-		const claimBtn = document.querySelector(".btn-claim");
-		try { claimBtn.click(); } catch {} 
-		await new Promise((res) =>
-          setTimeout(res, random(...pauseAndAfterMinig)));
-	  }
+      if(claimBtns.length > 0) {
+        const claimBtn = document.querySelector(".btn-claim");
+        try { claimBtn.click(); } catch {} 
+        await new Promise((res) =>
+              setTimeout(res, random(...pauseAndAfterMinig)));
+      }
+
+      // repair
+      const repBtns = [...document.querySelectorAll(".btn-mine")];
+      if(repBtns.length > 0) {
+        const repBtns = document.querySelector(".btn-mine");
+        try { repBtns.click(); } catch {} 
+        await new Promise((res) =>
+              setTimeout(res, random(...pauseAndAfterMinig)));
+      }
     }
 
     await new Promise((res) =>
